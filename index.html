@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="head.title"></title>
+  <meta
+    name="description"
+    content="Portfolio personal de Aydin: proyectos, habilidades y contacto."
+    data-i18n-attr="content:head.description" />
+  <link rel="icon" href="favicon.ico" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a href="#home" class="skip-link" data-i18n="skip"></a>
+
+  <header class="nav" role="banner">
+    <div class="container">
+      <div class="nav__inner">
+        <a class="nav__logo" href="#home" aria-label="Ir al inicio" data-i18n-attr="aria-label:nav.logo.label">
+          Aydin Flores
+        </a>
+
+        <nav class="nav__nav" aria-label="Navegaci&oacute;n principal" data-i18n-attr="aria-label:nav.label">
+          <button
+            id="menuToggle"
+            class="icon-btn"
+            type="button"
+            aria-label="Abrir o cerrar el men&uacute;"
+            aria-controls="menu"
+            aria-expanded="false"
+            data-i18n-attr="aria-label:nav.menu.toggle">
+            <span aria-hidden="true">&#8801;</span>
+          </button>
+
+          <ul id="menu" class="menu" role="list">
+            <li><a class="link" href="#home" data-i18n="nav.link.home"></a></li>
+            <li><a class="link" href="#about" data-i18n="nav.link.about"></a></li>
+            <li><a class="link" href="#projects" data-i18n="nav.link.projects"></a></li>
+            <li><a class="link" href="#services" data-i18n="nav.link.services"></a></li>
+            <li><a class="link" href="#skills" data-i18n="nav.link.skills"></a></li>
+            <li><a class="link" href="#contact" data-i18n="nav.link.contact"></a></li>
+          </ul>
+        </nav>
+
+        <div class="nav__actions">
+          <a class="link nav__social" href="https://github.com/AydinFlores" aria-label="Perfil de GitHub" data-i18n-attr="aria-label:nav.link.github.label" target="_blank" rel="noopener noreferrer">
+            <span class="nav__social-text">GitHub</span>
+            <span class="nav__social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" role="img" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.71.5.1.68-.22.68-.48 0-.24-.01-.86-.01-1.68-2.78.62-3.37-1.37-3.37-1.37-.46-1.2-1.12-1.52-1.12-1.52-.92-.65.07-.64.07-.64 1.02.07 1.56 1.08 1.56 1.08.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.32.1-2.74 0 0 .84-.28 2.75 1.05A9.2 9.2 0 0 1 12 7.05c.85 0 1.7.12 2.5.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.48.1 2.74.64.72 1.03 1.64 1.03 2.76 0 3.95-2.35 4.82-4.58 5.08.36.32.68.94.68 1.9 0 1.38-.01 2.5-.01 2.84 0 .26.18.58.69.48 3.97-1.35 6.84-5.2 6.84-9.71C22 6.58 17.52 2 12 2Z"></path>
+              </svg>
+            </span>
+          </a>
+          <a class="link nav__social" href="https://www.linkedin.com/in/aydin-flores-a54780230/" aria-label="Perfil de LinkedIn" data-i18n-attr="aria-label:nav.link.linkedin.label" target="_blank" rel="noopener noreferrer">
+            <span class="nav__social-text">LinkedIn</span>
+            <span class="nav__social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" role="img" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M4.98 3.5C3.6 3.5 2.5 4.62 2.5 6s1.1 2.5 2.48 2.5h.02C6.4 8.5 7.5 7.38 7.5 6S6.4 3.5 5 3.5h-.02ZM3 9.75h4v10.75H3V9.75Zm6.5 0h3.84v1.46h.05c.54-.98 1.86-2.02 3.82-2.02 4.08 0 4.84 2.66 4.84 6.12v5.19h-4v-4.6c0-1.1-.02-2.51-1.57-2.51-1.57 0-1.81 1.2-1.81 2.43v4.68h-4V9.75Z"></path>
+              </svg>
+            </span>
+          </a>
+
+          <button
+            id="langToggle"
+            class="icon-btn"
+            type="button"
+            aria-label="Cambiar idioma"
+            aria-pressed="false"
+            data-i18n-attr="aria-label:nav.lang.label">
+            <span aria-hidden="true">ES</span>
+          </button>
+
+          <button
+            id="themeToggle"
+            class="icon-btn"
+            type="button"
+            aria-label="Cambiar tema"
+            aria-pressed="false"
+            data-i18n-attr="aria-label:nav.theme.label">
+            <span class="icon-sun" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-hidden="true" focusable="false">
+                <circle cx="12" cy="12" r="4.5" fill="currentColor"></circle>
+                <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                  <line x1="12" y1="2.5" x2="12" y2="5"></line>
+                  <line x1="12" y1="19" x2="12" y2="21.5"></line>
+                  <line x1="2.5" y1="12" x2="5" y2="12"></line>
+                  <line x1="19" y1="12" x2="21.5" y2="12"></line>
+                  <line x1="4.6" y1="4.6" x2="6.4" y2="6.4"></line>
+                  <line x1="17.6" y1="17.6" x2="19.4" y2="19.4"></line>
+                  <line x1="17.6" y1="6.4" x2="19.4" y2="4.6"></line>
+                  <line x1="4.6" y1="19.4" x2="6.4" y2="17.6"></line>
+                </g>
+              </svg>
+            </span>
+            <span class="icon-moon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" role="img" aria-hidden="true" focusable="false">
+                <path d="M15.2 4.2c-4.1 1.1-6.5 5.4-5.4 9.5 1.1 4.1 5.4 6.5 9.5 5.4 1.1-.3 2.1-.8 3-1.4-1.5 3.2-5 5.4-9 5.4-5.5 0-10-4.5-10-10 0-4 2.2-7.6 5.4-9 1.2-.5 2.5-.8 3.8-.9-.8.7-1.7 1.2-2.9 1.5z" fill="currentColor"></path>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" role="main">
+    <section id="home" class="section hero" aria-label="Secci&oacute;n de inicio" data-i18n-attr="aria-label:hero.section.label">
+      <div class="container">
+        <div class="hero__grid">
+          <div class="hero__content">
+            <p class="muted" data-i18n="hero.role"></p>
+            <h1 data-i18n="hero.title"></h1>
+            <p class="muted" data-i18n="hero.lead"></p>
+
+            <div class="hero__cta" role="group" aria-label="Acciones principales" data-i18n-attr="aria-label:hero.cta.label">
+              <a class="btn" href="#projects" data-i18n="hero.cta.projects"></a>
+              <a class="btn btn--ghost" href="#contact" data-i18n="hero.cta.contact"></a>
+            </div>
+
+            <div class="hero__highlights" aria-label="Resumen rapido" data-i18n-attr="aria-label:hero.highlights.label">
+              <span class="tag" aria-label="Ubicacion" data-i18n="hero.highlight.location" data-i18n-attr="aria-label:hero.highlight.location.label"></span>
+              <span class="tag" aria-label="Intereses" data-i18n="hero.highlight.interests" data-i18n-attr="aria-label:hero.highlight.interests.label"></span>
+              <span class="tag" aria-label="Enfoque" data-i18n="hero.highlight.focus" data-i18n-attr="aria-label:hero.highlight.focus.label"></span>
+            </div>
+          </div>
+
+          <aside class="card hero__card" aria-label="Tarjeta lateral con puntos clave" data-i18n-attr="aria-label:hero.card.label">
+            <h2 class="card__title" data-i18n="hero.card.title"></h2>
+            <ul role="list">
+              <li data-i18n="hero.card.item1"></li>
+              <li data-i18n="hero.card.item2"></li>
+              <li data-i18n="hero.card.item3"></li>
+            </ul>
+            <p class="muted">
+              <a class="link" href="#services" data-i18n="hero.card.link"></a>
+              <span aria-hidden="true"> </span>
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section" aria-label="Secci&oacute;n sobre m&iacute;" data-i18n-attr="aria-label:about.section.label">
+      <div class="container">
+        <header class="section__header">
+          <h2 data-i18n="about.title"></h2>
+          <p class="muted" data-i18n="about.subtitle"></p>
+        </header>
+
+        <div class="card" role="region" aria-label="Descripcion personal" data-i18n-attr="aria-label:about.card.label">
+          <p data-i18n="about.p1"></p>
+          <p class="muted" data-i18n="about.p2"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section" aria-label="Secci&oacute;n de proyectos" data-i18n-attr="aria-label:projects.section.label">
+      <div class="container">
+        <header class="section__header">
+          <h2 data-i18n="projects.title"></h2>
+          <p class="muted" data-i18n="projects.subtitle"></p>
+        </header>
+
+        <div id="projectsGrid" class="grid" role="list" aria-label="Grid de proyectos" data-i18n-attr="aria-label:projects.grid.label">
+          <article class="card" role="listitem">
+            <div class="project__media">
+              <img src="assets/img/barber.png" alt="Barber website preview" loading="lazy" />
+              <video src="assets/vid/barber.mp4" muted loop playsinline preload="metadata"></video>
+            </div>
+            <header>
+              <h3 data-i18n="project.barber.title"></h3>
+              <p class="muted" data-i18n="project.barber.desc"></p>
+            </header>
+            <div class="card__links" role="group" aria-label="Enlaces del proyecto Barber Studio" data-i18n-attr="aria-label:project.barber.links.label">
+              <a class="link" href="https://aydinflores.github.io/Barba-y-Tijeras-Landing-Page/" target="_blank" rel="noopener noreferrer">Demo</a>
+              <a class="link" href="https://github.com/AydinFlores/Barba-y-Tijeras-Landing-Page" target="_blank" rel="noopener noreferrer">Repo</a>
+            </div>
+          </article>
+
+          <article class="card" role="listitem">
+            <div class="project__media">
+              <img src="assets/img/restaurant.png" alt="Restaurant website preview" loading="lazy" />
+              <video src="assets/vid/restaurant.mp4" muted loop playsinline preload="metadata"></video>
+            </div>
+            <header>
+              <h3 data-i18n="project.restaurant.title"></h3>
+              <p class="muted" data-i18n="project.restaurant.desc"></p>
+            </header>
+            <div class="card__links" role="group" aria-label="Enlaces del proyecto Restaurant" data-i18n-attr="aria-label:project.restaurant.links.label">
+              <a class="link" href="https://aydinflores.github.io/Casa-Lumen-Landing-Page/" target="_blank" rel="noopener noreferrer">Demo</a>
+              <a class="link" href="https://github.com/AydinFlores/Casa-Lumen-Landing-Page" target="_blank" rel="noopener noreferrer">Repo</a>
+            </div>
+          </article>
+
+          <article class="card" role="listitem">
+            <div class="project__media">
+              <img src="assets/img/trainer.png" alt="Trainer website preview" loading="lazy" />
+              <video src="assets/vid/trainer.mp4" muted loop playsinline preload="metadata"></video>
+            </div>
+            <header>
+              <h3 data-i18n="project.trainer.title"></h3>
+              <p class="muted" data-i18n="project.trainer.desc"></p>
+            </header>
+            <div class="card__links" role="group" aria-label="Enlaces del proyecto Trainer" data-i18n-attr="aria-label:project.trainer.links.label">
+              <a class="link" href="https://aydinflores.github.io/Personal-Trainer-Lading-Page/" target="_blank" rel="noopener noreferrer">Demo</a>
+              <a class="link" href="https://github.com/AydinFlores/Personal-Trainer-Lading-Page" target="_blank" rel="noopener noreferrer">Repo</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section" aria-label="Secci&oacute;n de servicios" data-i18n-attr="aria-label:services.section.label">
+      <div class="container">
+        <header class="section__header">
+          <h2 data-i18n="services.title"></h2>
+          <p class="muted" data-i18n="services.subtitle"></p>
+        </header>
+
+        <div class="grid" role="list" aria-label="Servicios disponibles" data-i18n-attr="aria-label:services.grid.label">
+          <article class="card" role="listitem">
+            <h3 data-i18n="service.one.title"></h3>
+            <p class="muted" data-i18n="service.one.desc"></p>
+          </article>
+
+          <article class="card" role="listitem">
+            <h3 data-i18n="service.two.title"></h3>
+            <p class="muted" data-i18n="service.two.desc"></p>
+          </article>
+
+          <article class="card" role="listitem">
+            <h3 data-i18n="service.three.title"></h3>
+            <p class="muted" data-i18n="service.three.desc"></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section" aria-label="Secci&oacute;n de habilidades" data-i18n-attr="aria-label:skills.section.label">
+      <div class="container">
+        <header class="section__header">
+          <h2 data-i18n="skills.title"></h2>
+          <p class="muted" data-i18n="skills.subtitle"></p>
+        </header>
+
+        <div class="grid" role="list" aria-label="Categor&iacute;as de habilidades" data-i18n-attr="aria-label:skills.grid.label">
+          <article class="card" role="listitem" aria-label="Habilidades Frontend" data-i18n-attr="aria-label:skills.frontend.label">
+            <h3 data-i18n="skills.frontend.title"></h3>
+            <ul role="list">
+              <li data-i18n="skills.frontend.item1"></li>
+              <li data-i18n="skills.frontend.item2"></li>
+              <li data-i18n="skills.frontend.item3"></li>
+              <li data-i18n="skills.frontend.item4"></li>
+              <li data-i18n="skills.frontend.item5"></li>
+            </ul>
+          </article>
+
+          <article class="card" role="listitem" aria-label="Dise&ntilde;o y maquetaci&oacute;n" data-i18n-attr="aria-label:skills.design.label">
+            <h3 data-i18n="skills.design.title"></h3>
+            <ul role="list">
+              <li data-i18n="skills.design.item1"></li>
+              <li data-i18n="skills.design.item2"></li>
+              <li data-i18n="skills.design.item3"></li>
+            </ul>
+          </article>
+
+          <article class="card" role="listitem" aria-label="Enfoque de trabajo" data-i18n-attr="aria-label:skills.work.label">
+            <h3 data-i18n="skills.work.title"></h3>
+            <ul role="list">
+              <li data-i18n="skills.work.item1"></li>
+              <li data-i18n="skills.work.item2"></li>
+              <li data-i18n="skills.work.item3"></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section" aria-label="Seccion de contacto" data-i18n-attr="aria-label:contact.section.label">
+      <div class="container">
+        <header class="section__header">
+          <h2 data-i18n="contact.title"></h2>
+          <p class="muted" data-i18n="contact.subtitle"></p>
+        </header>
+
+        <div class="contact__stack">
+          <div class="card" role="region" aria-label="Informacion de contacto" data-i18n-attr="aria-label:contact.card.label">
+            <p class="muted" data-i18n="contact.card.lead" data-i18n-html="true"></p>
+            <p data-i18n="contact.card.body"></p>
+
+            <div class="contact__cta">
+            <a class="btn" href="https://es.fiverr.com/s/7Y8V4m4" data-i18n="contact.cta" target="_blank" rel="noopener noreferrer"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <p class="muted">
+        <span data-i18n="footer.text"></span>
+      </p>
+      <a class="link" href="https://es.fiverr.com/s/7Y8V4m4" data-i18n="footer.cta" target="_blank" rel="noopener noreferrer"></a>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
