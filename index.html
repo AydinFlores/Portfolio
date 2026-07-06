@@ -148,6 +148,8 @@ section{padding:64px 0}
 .pcard p{color:var(--ink-2);font-size:.93rem;margin:0 0 1rem}
 .stack{display:flex;flex-wrap:wrap;gap:.4rem}
 .chip{font-family:'JetBrains Mono';font-size:.72rem;color:var(--ink-2);border:1px solid var(--line);border-radius:6px;padding:.2rem .5rem}
+.pcard .visit{display:inline-flex;align-items:center;gap:.4rem;font-weight:600;font-size:.9rem;color:var(--accent);margin:0 0 1rem;transition:gap .15s}
+.pcard .visit:hover{color:var(--accent-ink);gap:.7rem}
 .proj-note{margin-top:20px;font-size:.85rem;color:var(--muted);text-align:center}
 
 /* DEMO CHATBOT (proyecto interactivo) */
@@ -425,25 +427,44 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-s
 <section id="proyectos">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Proyectos propios</span>
-      <h2>Sistemas reales que he construido de principio a fin</h2>
-      <p>Estos son proyectos propios que demuestran el tipo de automatización end-to-end que puedo montar para tu negocio.</p>
+      <span class="eyebrow">Proyectos</span>
+      <h2>Webs reales que he diseñado y publicado</h2>
+      <p>Landing pages en vivo para distintos sectores. Ábrelas y mira el nivel: esto es lo que puedo montar para tu negocio.</p>
     </div>
     <div class="proj">
+      <div class="pcard">
+        <span class="tag">Restaurante · Landing</span>
+        <h3>Casa Lumen — Restaurante de autor</h3>
+        <p>Landing elegante que transmite la experiencia del restaurante y empuja a reservar mesa. Diseño con alma, pensado para convertir visitas en clientes.</p>
+        <a class="visit" href="https://aydinflores.github.io/Casa-Lumen-Landing-Page/" target="_blank" rel="noopener">Ver web en vivo →</a>
+        <div class="stack">
+          <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Responsive</span><span class="chip">Landing</span>
+        </div>
+      </div>
+      <div class="pcard">
+        <span class="tag">Barbería · Landing</span>
+        <h3>Barba y Tijeras — Barbería</h3>
+        <p>Web con carácter para una barbería: servicios, estilo y un botón claro para pedir cita. Actitud de marca de principio a fin.</p>
+        <a class="visit" href="https://aydinflores.github.io/Barba-y-Tijeras-Landing-Page/" target="_blank" rel="noopener">Ver web en vivo →</a>
+        <div class="stack">
+          <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Responsive</span><span class="chip">Landing</span>
+        </div>
+      </div>
+      <div class="pcard">
+        <span class="tag">Fitness · Landing</span>
+        <h3>Rendimiento Real — Entrenador personal</h3>
+        <p>Landing para un entrenador personal que respira disciplina y resultados, con planes claros y llamada directa a reservar sesión.</p>
+        <a class="visit" href="https://aydinflores.github.io/Personal-Trainer-Lading-Page/" target="_blank" rel="noopener">Ver web en vivo →</a>
+        <div class="stack">
+          <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Responsive</span><span class="chip">Landing</span>
+        </div>
+      </div>
       <div class="pcard">
         <span class="tag">Pipeline de contenido automatizado</span>
         <h3>Canal de finanzas automatizado</h3>
         <p>Sistema completo que convierte datos económicos en vídeos publicables: guion, voz, animación y render, sin intervención manual en cada pieza.</p>
         <div class="stack">
           <span class="chip">n8n</span><span class="chip">IA</span><span class="chip">Remotion</span><span class="chip">ElevenLabs</span><span class="chip">Python</span>
-        </div>
-      </div>
-      <div class="pcard">
-        <span class="tag">Asistente IA a medida</span>
-        <h3>Chatbot para captar clientes 24/7</h3>
-        <p>Un asistente que atiende, resuelve dudas y agenda por ti a cualquier hora. Aquí al lado tienes uno funcionando: pruébalo tú mismo. 👉</p>
-        <div class="stack">
-          <span class="chip">IA / LLM</span><span class="chip">n8n</span><span class="chip">WhatsApp</span><span class="chip">Web</span>
         </div>
       </div>
     </div>
@@ -485,7 +506,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-s
       </div>
     </div>
 
-    <p class="proj-note">Aún estoy incorporando casos de clientes. Sé de los primeros: reserva una auditoría gratuita abajo.</p>
+    <p class="proj-note">¿Tu negocio el próximo? Reserva una auditoría gratuita abajo y hablamos.</p>
   </div>
 </section>
 
