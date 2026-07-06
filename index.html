@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  PORTFOLIO FREELANCE — EDITA ESTOS DATOS ANTES DE PUBLICAR:
+  1. NOMBRE            -> busca  Aydin Flores
+  2. EMAIL             -> busca  aydinflores64@gmail.com   (aparece 2 veces)
+  3. WHATSAPP          -> busca  34600000000
+  4. LINKEDIN          -> busca  https://linkedin.com/in/tuusuario
+  5. FORMULARIO        -> crea cuenta gratis en https://formspree.io
+                          y pega tu endpoint en  action="..."  del <form>
+  6. PRECIOS (opcional)-> busca  "Precio de lanzamiento"
+  7. PROYECTOS         -> ajusta la sección #proyectos con tus datos reales
+  ============================================================
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aydin Flores — Webs, automatización e IA para tu negocio</title>
+<meta name="description" content="Construyo webs, chatbots con IA y automatizaciones para pequeñas empresas. Menos horas repetitivas, más clientes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F9FB;
+  --paper:#FFFFFF;
+  --ink:#0E1B2A;
+  --ink-2:#3A4A5C;
+  --muted:#6B7B8C;
+  --line:#DEE5EC;
+  --accent:#0B63CE;
+  --accent-ink:#084BA0;
+  --accent-soft:#EAF2FC;
+  --ok:#0E7C5A;
+  --shadow:0 1px 2px rgba(14,27,42,.04),0 8px 24px rgba(14,27,42,.06);
+  --r:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:'Inter',system-ui,sans-serif;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;line-height:1.15;letter-spacing:-.02em;margin:0}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.eyebrow{
+  font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent-ink);
+}
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.95rem;
+  padding:.8rem 1.35rem;border-radius:10px;border:1px solid transparent;cursor:pointer;
+  transition:transform .12s ease,background .2s ease,box-shadow .2s ease;
+}
+.btn:focus-visible{outline:3px solid var(--accent-soft);outline-offset:2px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-ink);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--ink);transform:translateY(-1px)}
+
+/* NAV */
+header.nav{
+  position:sticky;top:0;z-index:50;background:rgba(247,249,251,.82);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Space Grotesk';font-weight:700;font-size:1.05rem;display:flex;align-items:center;gap:.5rem}
+.logo .dot{width:9px;height:9px;border-radius:2px;background:var(--accent)}
+.nav-links{display:flex;gap:1.6rem;align-items:center}
+.nav-links a{font-size:.9rem;color:var(--ink-2)}
+.nav-links a:hover{color:var(--ink)}
+.nav-links .btn{padding:.55rem 1rem}
+.nav-toggle{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:.5rem;cursor:pointer}
+
+/* HERO */
+.hero{padding:72px 0 40px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(2.1rem,5vw,3.3rem);margin:.9rem 0 1rem}
+.hero h1 .hl{color:var(--accent)}
+.hero p.lead{font-size:1.15rem;color:var(--ink-2);max-width:36ch;margin:0 0 1.8rem}
+.hero-cta{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero-note{margin-top:1.1rem;font-size:.85rem;color:var(--muted);display:flex;align-items:center;gap:.5rem}
+.hero-note b{color:var(--ok)}
+
+/* PIPELINE SVG (signature) */
+.pipe{background:var(--ink);border-radius:var(--r);padding:26px 22px;box-shadow:var(--shadow);color:#DCE7F3}
+.pipe .pipe-label{font-family:'JetBrains Mono';font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#7FA8DC;margin-bottom:14px}
+svg .node-box{fill:#152538;stroke:#2E4763;rx:8}
+svg .node-t{font-family:'JetBrains Mono',monospace;font-size:11px;fill:#CFE0F2}
+svg .node-s{font-family:'JetBrains Mono',monospace;font-size:9px;fill:#6E93BE}
+svg .flow{stroke:#0B63CE;stroke-width:2;fill:none;stroke-dasharray:6 6}
+@media (prefers-reduced-motion:no-preference){
+  svg .flow{animation:dash 1.2s linear infinite}
+}
+@keyframes dash{to{stroke-dashoffset:-24}}
+
+/* SECTION SHELL */
+section{padding:64px 0}
+.sec-head{max-width:52ch;margin-bottom:36px}
+.sec-head h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin:.6rem 0 .6rem}
+.sec-head p{color:var(--ink-2);margin:0;font-size:1.05rem}
+
+/* SERVICES */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:26px;box-shadow:var(--shadow);transition:transform .15s ease,border-color .2s ease}
+.card:hover{transform:translateY(-3px);border-color:#C6D2DE}
+.card .ico{width:42px;height:42px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.card h3{font-size:1.15rem;margin-bottom:.5rem}
+.card p{color:var(--ink-2);font-size:.95rem;margin:0 0 1rem}
+.card ul{margin:0;padding:0;list-style:none}
+.card li{font-size:.88rem;color:var(--ink-2);padding-left:1.3rem;position:relative;margin-bottom:.4rem}
+.card li::before{content:"→";position:absolute;left:0;color:var(--accent);font-weight:600}
+
+/* PROCESS */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:step}
+.step{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:22px;position:relative}
+.step .num{font-family:'JetBrains Mono';font-size:.8rem;color:var(--accent);letter-spacing:.1em}
+.step h3{font-size:1.02rem;margin:.5rem 0 .4rem}
+.step p{font-size:.88rem;color:var(--ink-2);margin:0}
+
+/* CALCULATOR (signature interactive) */
+.calc{background:var(--ink);color:#E5EEF8;border-radius:18px;padding:40px;box-shadow:var(--shadow)}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.calc h2{color:#fff;font-size:1.7rem;margin-bottom:.5rem}
+.calc p.sub{color:#9FBBD9;margin:0 0 1.6rem;font-size:.98rem}
+.field{margin-bottom:18px}
+.field label{display:block;font-family:'JetBrains Mono';font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#8FB0D4;margin-bottom:.5rem}
+.field input,.field select{
+  width:100%;background:#0B1826;border:1px solid #294159;color:#fff;border-radius:10px;
+  padding:.75rem .9rem;font-family:'Inter';font-size:1rem;
+}
+.field input:focus,.field select:focus{outline:none;border-color:var(--accent)}
+.readout{background:#0B1826;border:1px solid #294159;border-radius:14px;padding:28px;text-align:center}
+.readout .big{font-family:'Space Grotesk';font-size:3rem;font-weight:700;color:#fff;line-height:1;letter-spacing:-.03em}
+.readout .big small{font-size:1.1rem;color:#8FB0D4;font-weight:500}
+.readout .money{margin-top:.8rem;font-family:'JetBrains Mono';font-size:1.05rem;color:#4FD4A0}
+.readout .cap{margin-top:1rem;font-size:.8rem;color:#7B99B8}
+.calc .btn{margin-top:1.4rem;width:100%;justify-content:center}
+
+/* PROJECTS */
+.proj{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.pcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:26px;box-shadow:var(--shadow)}
+.pcard .tag{display:inline-block;font-family:'JetBrains Mono';font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);background:var(--accent-soft);padding:.25rem .6rem;border-radius:6px;margin-bottom:.9rem}
+.pcard h3{font-size:1.2rem;margin-bottom:.5rem}
+.pcard p{color:var(--ink-2);font-size:.93rem;margin:0 0 1rem}
+.stack{display:flex;flex-wrap:wrap;gap:.4rem}
+.chip{font-family:'JetBrains Mono';font-size:.72rem;color:var(--ink-2);border:1px solid var(--line);border-radius:6px;padding:.2rem .5rem}
+.proj-note{margin-top:20px;font-size:.85rem;color:var(--muted);text-align:center}
+
+/* DEMO CHATBOT (proyecto interactivo) */
+.demo{background:var(--ink);border-radius:18px;padding:34px;box-shadow:var(--shadow);margin-top:24px}
+.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.demo h3{color:#fff;font-size:1.5rem;margin-bottom:.6rem}
+.demo p.sub{color:#9FBBD9;margin:0 0 1rem;font-size:.98rem}
+.demo .stack{margin-top:16px}
+.demo .chip{color:#B7CEE6;border-color:#294159}
+.chatwin{background:#0B1826;border:1px solid #294159;border-radius:16px;display:flex;flex-direction:column;height:420px;overflow:hidden}
+.chat-head{display:flex;align-items:center;gap:.6rem;padding:14px 16px;border-bottom:1px solid #1c2f43}
+.chat-head .av{width:34px;height:34px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:1rem}
+.chat-head .who{font-family:'Space Grotesk';font-weight:600;color:#fff;font-size:.95rem;line-height:1.1}
+.chat-head .st{font-family:'JetBrains Mono';font-size:.66rem;color:#4FD4A0}
+.chat-body{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+.msg{max-width:82%;padding:.6rem .85rem;border-radius:14px;font-size:.9rem;line-height:1.45}
+.msg.bot{background:#152538;color:#DCE7F3;align-self:flex-start;border-bottom-left-radius:4px}
+.msg.user{background:var(--accent);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.chips-row{display:flex;flex-wrap:wrap;gap:.4rem;padding:0 16px 10px}
+.qchip{font-family:'Inter';font-size:.8rem;background:transparent;border:1px solid #294159;color:#9FBBD9;border-radius:20px;padding:.35rem .75rem;cursor:pointer;transition:.15s}
+.qchip:hover{border-color:var(--accent);color:#fff}
+.chat-input{display:flex;gap:.5rem;padding:12px 16px;border-top:1px solid #1c2f43}
+.chat-input input{flex:1;background:#0B1826;border:1px solid #294159;color:#fff;border-radius:10px;padding:.6rem .8rem;font-family:'Inter';font-size:.92rem}
+.chat-input input:focus{outline:none;border-color:var(--accent)}
+.chat-input button{background:var(--accent);border:none;color:#fff;border-radius:10px;padding:0 .95rem;cursor:pointer;font-size:1.1rem}
+@media(max-width:900px){.demo-grid{grid-template-columns:1fr;gap:28px}}
+
+/* OFFER */
+.offer{background:linear-gradient(135deg,var(--accent) 0%,var(--accent-ink) 100%);color:#fff;border-radius:18px;padding:44px;text-align:center;box-shadow:var(--shadow)}
+.offer .eyebrow{color:#BFD8F7}
+.offer h2{color:#fff;font-size:clamp(1.6rem,3.5vw,2.1rem);margin:.6rem 0 .8rem}
+.offer p{color:#D8E7FA;max-width:50ch;margin:0 auto 1.6rem;font-size:1.05rem}
+.offer-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:640px;margin:0 auto 1.8rem;text-align:left}
+.ocard{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:20px}
+.ocard h3{color:#fff;font-size:1.05rem;margin-bottom:.4rem}
+.ocard p{color:#D8E7FA;font-size:.9rem;margin:0}
+.offer .btn-primary{background:#fff;color:var(--accent-ink)}
+.offer .btn-primary:hover{background:#F0F5FC}
+
+/* ABOUT */
+.about{display:grid;grid-template-columns:1fr 1.3fr;gap:44px;align-items:start}
+.about-card{background:var(--ink);color:#E5EEF8;border-radius:var(--r);padding:30px;box-shadow:var(--shadow)}
+.about-card .role{font-family:'JetBrains Mono';font-size:.75rem;color:#8FB0D4;letter-spacing:.06em;text-transform:uppercase}
+.about-card .name{font-family:'Space Grotesk';font-size:1.5rem;font-weight:700;color:#fff;margin:.4rem 0 1rem}
+.about-card .loc{font-size:.9rem;color:#B7CEE6}
+.about-text h2{margin-bottom:1rem}
+.about-text p{color:var(--ink-2);margin:0 0 1rem}
+
+/* CONTACT */
+.contact{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:44px;box-shadow:var(--shadow)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.contact h2{margin-bottom:.6rem}
+.contact p.sub{color:var(--ink-2);margin:0 0 1.4rem}
+.form label{display:block;font-family:'JetBrains Mono';font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 .4rem}
+.form input,.form textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:.75rem .9rem;font-family:'Inter';font-size:1rem;margin-bottom:1rem;background:var(--bg)}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--accent);background:#fff}
+.form .btn{width:100%;justify-content:center}
+.direct a{display:flex;align-items:center;gap:.7rem;padding:.9rem 0;border-bottom:1px solid var(--line);color:var(--ink);font-weight:500}
+.direct a:last-child{border:none}
+.direct a:hover{color:var(--accent)}
+.direct .k{font-family:'JetBrains Mono';font-size:.72rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;min-width:90px}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:.85rem}
+.foot-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-grid,.calc-grid,.about,.contact-grid{grid-template-columns:1fr;gap:32px}
+  .cards,.steps,.proj,.offer-cards{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .hero{padding:48px 0 24px}
+  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--paper);
+    flex-direction:column;align-items:stretch;padding:1rem 24px;gap:1rem;border-bottom:1px solid var(--line)}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#" class="logo"><span class="dot"></span>Aydin Flores</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Cómo trabajo</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#contacto" class="btn btn-primary">Hablemos</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Webs · Automatización · IA</span>
+      <h1>Menos tareas repetitivas. <span class="hl">Más tiempo</span> para tu negocio.</h1>
+      <p class="lead">Ayudo a pequeñas empresas a automatizar procesos, construir su web y generar contenido, con sistemas hechos a medida que trabajan solos.</p>
+      <div class="hero-cta">
+        <a href="#contacto" class="btn btn-primary">Reservar auditoría gratuita</a>
+        <a href="#servicios" class="btn btn-ghost">Ver qué hago</a>
+      </div>
+      <div class="hero-note"><b>●</b> Basado en Barcelona · Trabajo con negocios de toda España</div>
+    </div>
+
+    <!-- SIGNATURE: pipeline de automación -->
+    <div class="pipe">
+      <div class="pipe-label">// así funciona una automatización</div>
+      <svg viewBox="0 0 340 220" width="100%" role="img" aria-label="Diagrama: entrada, procesamiento con IA, resultado automático">
+        <path class="flow" d="M78 46 H132"/>
+        <path class="flow" d="M78 110 H132"/>
+        <path class="flow" d="M208 78 H262"/>
+        <path class="flow" d="M170 62 V150 H262"/>
+        <!-- entradas -->
+        <rect class="node-box" x="8" y="30" width="70" height="34" rx="8"/>
+        <text class="node-t" x="18" y="46">Formulario</text>
+        <text class="node-s" x="18" y="58">nuevo lead</text>
+        <rect class="node-box" x="8" y="94" width="70" height="34" rx="8"/>
+        <text class="node-t" x="18" y="110">Email /</text>
+        <text class="node-s" x="18" y="122">factura</text>
+        <!-- motor -->
+        <rect class="node-box" x="132" y="52" width="76" height="52" rx="10" fill="#0B63CE" stroke="#2E7BE0"/>
+        <text class="node-t" x="146" y="76" fill="#fff">n8n + IA</text>
+        <text class="node-s" x="146" y="90" fill="#BBD6F7">procesa</text>
+        <!-- salidas -->
+        <rect class="node-box" x="262" y="62" width="70" height="34" rx="8"/>
+        <text class="node-t" x="272" y="78">CRM /</text>
+        <text class="node-s" x="272" y="90">hoja</text>
+        <rect class="node-box" x="262" y="134" width="70" height="34" rx="8"/>
+        <text class="node-t" x="272" y="150">WhatsApp</text>
+        <text class="node-s" x="272" y="162">aviso auto</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">El paquete completo</span>
+      <h2>Todo lo que tu negocio necesita para operar mejor online</h2>
+      <p>Puedes contratar una pieza o el sistema completo. Todo conectado, sin herramientas sueltas que nadie mantiene.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B63CE" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></div>
+        <h3>Webs y landing pages</h3>
+        <p>Tu escaparate online que convierte las visitas en clientes reales, no en curiosos que se van.</p>
+        <ul>
+          <li>Diseño a medida, rápido y responsive</li>
+          <li>Optimizada para Google (SEO base)</li>
+          <li>Botón directo a tu WhatsApp</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B63CE" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg></div>
+        <h3>Chatbot con IA 24/7</h3>
+        <p>Un asistente que responde a tus clientes a cualquier hora y no deja escapar ni una venta.</p>
+        <ul>
+          <li>Responde dudas al instante, día y noche</li>
+          <li>Capta y filtra clientes solo</li>
+          <li>Conectado a tu web y WhatsApp</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B63CE" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg></div>
+        <h3>Reservas y citas automáticas</h3>
+        <p>Tus clientes reservan solos y tú recibes la cita confirmada, sin llamadas ni WhatsApps a deshora.</p>
+        <ul>
+          <li>Agenda online abierta 24/7</li>
+          <li>Confirmación y recordatorio automático</li>
+          <li>Menos ausencias y huecos vacíos</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B63CE" stroke-width="2"><polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.5 5.5 21 7.5 13.5 2 9 9 9"/></svg></div>
+        <h3>Reseñas de Google en automático</h3>
+        <p>Cada cliente contento se convierte en una reseña que te trae aún más clientes nuevos.</p>
+        <ul>
+          <li>Pide la reseña sola tras atender</li>
+          <li>Más reputación y confianza en Google</li>
+          <li>Apareces antes que tu competencia</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B63CE" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg></div>
+        <h3>Automatizaciones a medida</h3>
+        <p>Las tareas repetitivas se hacen solas mientras tú te dedicas a lo que de verdad importa.</p>
+        <ul>
+          <li>Presupuestos y facturas sin copiar-pegar</li>
+          <li>Datos sincronizados entre tus apps</li>
+          <li>Avisos automáticos cuando algo pasa</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B63CE" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Seguimiento de clientes por WhatsApp</h3>
+        <p>Mensajes automáticos que recuperan clientes fríos y hacen que los de siempre vuelvan a comprar.</p>
+        <ul>
+          <li>Recupera presupuestos sin respuesta</li>
+          <li>Recordatorios y ofertas automáticas</li>
+          <li>Fideliza sin tener que acordarte</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Cómo trabajo</span>
+      <h2>Un proceso claro, sin sorpresas</h2>
+      <p>Sabes en todo momento qué se está haciendo, cuánto cuesta y cuándo lo tienes.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="num">01</span><h3>Diagnóstico</h3><p>Vemos juntos dónde pierdes tiempo o clientes. Gratis y sin compromiso.</p></div>
+      <div class="step"><span class="num">02</span><h3>Propuesta</h3><p>Te digo exactamente qué haría, el precio cerrado y el plazo.</p></div>
+      <div class="step"><span class="num">03</span><h3>Implementación</h3><p>Construyo el sistema y lo dejo funcionando en tu negocio.</p></div>
+      <div class="step"><span class="num">04</span><h3>Soporte</h3><p>Me quedo cerca para ajustar y que todo siga funcionando.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULADORA (signature interactiva) -->
+<section id="calculadora">
+  <div class="wrap">
+    <div class="calc">
+      <div class="calc-grid">
+        <div>
+          <span class="eyebrow" style="color:#8FB0D4">Calcula tu ahorro</span>
+          <h2>¿Cuánto tiempo te roba una tarea repetitiva?</h2>
+          <p class="sub">Muchos negocios pierden horas cada semana en algo que un sistema podría hacer solo. Haz el cálculo.</p>
+          <div class="field">
+            <label for="tarea">La tarea que más se repite</label>
+            <select id="tarea">
+              <option>Responder los mismos mensajes / emails</option>
+              <option>Pasar datos de un sitio a otro a mano</option>
+              <option>Hacer presupuestos o facturas</option>
+              <option>Publicar en redes sociales</option>
+              <option>Agendar y confirmar citas</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="horas">Horas a la semana que le dedicas</label>
+            <input type="number" id="horas" value="6" min="1" max="60">
+          </div>
+          <div class="field">
+            <label for="coste">Coste por hora de esa persona (€)</label>
+            <input type="number" id="coste" value="15" min="5" max="200">
+          </div>
+        </div>
+        <div>
+          <div class="readout">
+            <div class="big" id="horasAnio">312<small> h/año</small></div>
+            <div class="money" id="dinero">≈ 4.680 € al año en tiempo</div>
+            <div class="cap">Tiempo que podrías recuperar automatizando esta tarea.</div>
+          </div>
+          <a href="#contacto" class="btn btn-primary">Quiero recuperar ese tiempo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTOS -->
+<section id="proyectos">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Proyectos propios</span>
+      <h2>Sistemas reales que he construido de principio a fin</h2>
+      <p>Estos son proyectos propios que demuestran el tipo de automatización end-to-end que puedo montar para tu negocio.</p>
+    </div>
+    <div class="proj">
+      <div class="pcard">
+        <span class="tag">Pipeline de contenido automatizado</span>
+        <h3>Canal de finanzas automatizado</h3>
+        <p>Sistema completo que convierte datos económicos en vídeos publicables: guion, voz, animación y render, sin intervención manual en cada pieza.</p>
+        <div class="stack">
+          <span class="chip">n8n</span><span class="chip">IA</span><span class="chip">Remotion</span><span class="chip">ElevenLabs</span><span class="chip">Python</span>
+        </div>
+      </div>
+      <div class="pcard">
+        <span class="tag">Asistente IA a medida</span>
+        <h3>Chatbot para captar clientes 24/7</h3>
+        <p>Un asistente que atiende, resuelve dudas y agenda por ti a cualquier hora. Aquí al lado tienes uno funcionando: pruébalo tú mismo. 👉</p>
+        <div class="stack">
+          <span class="chip">IA / LLM</span><span class="chip">n8n</span><span class="chip">WhatsApp</span><span class="chip">Web</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEMO INTERACTIVO EN VIVO -->
+    <div class="demo">
+      <div class="demo-grid">
+        <div>
+          <span class="eyebrow" style="color:#8FB0D4">Demo en vivo</span>
+          <h3>Así atiende un chatbot que monto para ti</h3>
+          <p class="sub">Este es un asistente de ejemplo para una peluquería. Pregúntale por horarios, precios o pide cita. Responde solo, sin que tú toques nada.</p>
+          <p class="sub" style="color:#7B99B8">Para tu negocio lo entreno con tus servicios, precios y agenda reales.</p>
+          <div class="stack">
+            <span class="chip">Responde al instante</span><span class="chip">24/7</span><span class="chip">Sin perder clientes</span>
+          </div>
+        </div>
+        <div>
+          <div class="chatwin">
+            <div class="chat-head">
+              <div class="av">💬</div>
+              <div>
+                <div class="who">Peluquería Bella</div>
+                <div class="st">● en línea · responde al instante</div>
+              </div>
+            </div>
+            <div class="chat-body" id="chatBody"></div>
+            <div class="chips-row" id="chatChips">
+              <button class="qchip" data-q="¿Qué horario tenéis?">Horarios</button>
+              <button class="qchip" data-q="¿Cuánto cuesta un corte?">Precios</button>
+              <button class="qchip" data-q="Quiero pedir cita">Pedir cita</button>
+              <button class="qchip" data-q="¿Dónde estáis?">Ubicación</button>
+            </div>
+            <form class="chat-input" id="chatForm">
+              <input id="chatText" type="text" placeholder="Escribe tu mensaje..." autocomplete="off">
+              <button type="submit" aria-label="Enviar">➤</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="proj-note">Aún estoy incorporando casos de clientes. Sé de los primeros: reserva una auditoría gratuita abajo.</p>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section id="oferta">
+  <div class="wrap">
+    <div class="offer">
+      <span class="eyebrow">Oferta de lanzamiento</span>
+      <h2>Empieza sin riesgo</h2>
+      <p>Estoy abriendo agenda para los primeros negocios. Por eso lo pongo fácil para empezar a trabajar juntos.</p>
+      <div class="offer-cards">
+        <div class="ocard">
+          <h3>Auditoría gratuita</h3>
+          <p>Analizo tu negocio y te digo qué automatizar o mejorar. Sin coste y sin compromiso.</p>
+        </div>
+        <div class="ocard">
+          <h3>Precio de lanzamiento</h3>
+          <p>Tu primer proyecto a precio reducido a cambio de tu opinión honesta al terminar.</p>
+        </div>
+      </div>
+      <a href="#contacto" class="btn btn-primary">Reservar mi auditoría gratis</a>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section id="sobre-mi">
+  <div class="wrap about">
+    <div class="about-card">
+      <div class="role">Freelance · Automatización & Desarrollo</div>
+      <div class="name">Aydin Flores</div>
+      <div class="loc">📍 Barcelona, España</div>
+      <div class="stack" style="margin-top:18px">
+        <span class="chip" style="color:#B7CEE6;border-color:#294159">n8n</span>
+        <span class="chip" style="color:#B7CEE6;border-color:#294159">Python</span>
+        <span class="chip" style="color:#B7CEE6;border-color:#294159">IA / LLMs</span>
+        <span class="chip" style="color:#B7CEE6;border-color:#294159">Web</span>
+        <span class="chip" style="color:#B7CEE6;border-color:#294159">Automatización</span>
+      </div>
+    </div>
+    <div class="about-text">
+      <span class="eyebrow">Sobre mí</span>
+      <h2>Construyo sistemas, no solo webs</h2>
+      <p>Soy desarrollador y creador especializado en automatización. Me paso el día construyendo pipelines que producen contenido y flujos de trabajo que hacen tareas solos, así que sé de primera mano cuánto tiempo y dinero se puede ahorrar cuando dejas que la tecnología cargue con lo repetitivo.</p>
+      <p>Trabajo con herramientas locales y de bajo coste siempre que puedo, para que la solución sea sostenible y no dependas de suscripciones caras. Prefiero entregar algo que funcione rápido y mejorarlo contigo antes que perseguir la perfección durante meses.</p>
+      <p>Si tienes un negocio pequeño y sientes que estás perdiendo horas en cosas que "debería hacer la máquina", probablemente pueda ayudarte.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="wrap">
+    <div class="contact">
+      <div class="contact-grid">
+        <div>
+          <span class="eyebrow">Hablemos</span>
+          <h2>Cuéntame qué necesita tu negocio</h2>
+          <p class="sub">Respondo en menos de 24 h. La primera consulta es gratuita.</p>
+          <!-- FORMULARIO: sustituye TU_ID_FORMSPREE por tu endpoint de formspree.io -->
+          <form class="form" id="contactForm">
+            <label for="n">Nombre</label>
+            <input id="n" name="nombre" type="text" required>
+            <label for="e">Email</label>
+            <input id="e" name="email" type="email" required>
+            <label for="m">¿En qué puedo ayudarte?</label>
+            <textarea id="m" name="mensaje" rows="4" required></textarea>
+            <button class="btn btn-primary" type="submit">Enviar por WhatsApp</button>
+          </form>
+        </div>
+        <div class="direct">
+          <a href="mailto:aydinflores64@gmail.com"><span class="k">Email</span> aydinflores64@gmail.com</a>
+          <a href="https://wa.me/34642966927"><span class="k">WhatsApp</span> Escríbeme directo</a>
+          <a href="https://www.linkedin.com/in/aydin-flores-a54780230/"><span class="k">LinkedIn</span> Conectemos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>© <span id="year"></span> Aydin Flores · Webs, automatización e IA</div>
+    <div style="font-family:'JetBrains Mono';font-size:.78rem">Hecho a mano en Barcelona</div>
+  </div>
+</footer>
+
+<script>
+// Menú móvil
+const t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+t.addEventListener('click',()=>l.classList.toggle('open'));
+l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')));
+
+// Año
+document.getElementById('year').textContent=new Date().getFullYear();
+
+// Calculadora de ahorro
+const h=document.getElementById('horas'),c=document.getElementById('coste');
+const outH=document.getElementById('horasAnio'),outM=document.getElementById('dinero');
+function calc(){
+  const horas=Math.max(0,parseFloat(h.value)||0);
+  const coste=Math.max(0,parseFloat(c.value)||0);
+  const anio=Math.round(horas*52);
+  const dinero=Math.round(anio*coste);
+  outH.innerHTML=anio.toLocaleString('es-ES')+'<small> h/año</small>';
+  outM.textContent='≈ '+dinero.toLocaleString('es-ES')+' € al año en tiempo';
+}
+[h,c,document.getElementById('tarea')].forEach(el=>el.addEventListener('input',calc));
+calc();
+
+// Formulario -> WhatsApp
+document.getElementById('contactForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const nombre=document.getElementById('n').value.trim();
+  const email=document.getElementById('e').value.trim();
+  const msg=document.getElementById('m').value.trim();
+  const texto=encodeURIComponent(`Hola Aydin, soy ${nombre} (${email}).\n\n${msg}`);
+  window.open('https://wa.me/34642966927?text='+texto,'_blank');
+});
+
+// Demo chatbot
+const chatBody=document.getElementById('chatBody');
+function addMsg(text,who){
+  const d=document.createElement('div');
+  d.className='msg '+who;
+  d.textContent=text;
+  chatBody.appendChild(d);
+  chatBody.scrollTop=chatBody.scrollHeight;
+}
+function botReply(q){
+  const t=q.toLowerCase();
+  let r;
+  if(/hora|horario|abr|abren|cierr|cuando/.test(t))
+    r='Abrimos de martes a sábado, de 9:30 a 20:00. Los lunes descansamos. ¿Quieres que te reserve un hueco? 😊';
+  else if(/precio|cuesta|cuanto|tarifa|vale|corte|tinte|mechas/.test(t))
+    r='Corte 15€, corte + peinado 22€, tinte desde 35€ y mechas desde 50€. ¿Te reservo cita para alguno?';
+  else if(/cita|reserv|agend|hueco|turno|apuntar/.test(t))
+    r='¡Genial! Tengo hueco mañana a las 11:00 o a las 17:30. Dime cuál te va mejor y tu nombre, y te lo confirmo al momento. ✅';
+  else if(/donde|ubica|direccion|sitio|local|llegar/.test(t))
+    r='Estamos en C/ Ejemplo 24, Barcelona, al lado del metro. Te paso la ubicación de Google Maps si quieres. 📍';
+  else if(/gracias|genial|perfecto|ok|vale/.test(t))
+    r='¡A ti! Cuando quieras algo más, aquí estoy 24/7. 🙌';
+  else if(/hola|buenas|hey/.test(t))
+    r='¡Hola! Soy el asistente de Peluquería Bella. Puedo decirte horarios, precios o reservarte cita. ¿Qué necesitas?';
+  else
+    r='Buena pregunta 🙂 Puedo ayudarte con horarios, precios y reservas. ¿Sobre cuál te informo? (En tu negocio real respondería también esto porque estaría entrenado con tu info).';
+  setTimeout(()=>addMsg(r,'bot'),450);
+}
+function send(q){ addMsg(q,'user'); botReply(q); }
+document.getElementById('chatForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const inp=document.getElementById('chatText');
+  const v=inp.value.trim();
+  if(!v)return;
+  send(v); inp.value='';
+});
+document.getElementById('chatChips').addEventListener('click',function(e){
+  if(e.target.dataset.q) send(e.target.dataset.q);
+});
+addMsg('¡Hola! 👋 Soy el asistente de Peluquería Bella. Pregúntame por horarios, precios o pídeme cita.','bot');
+</script>
+</body>
+</html>
